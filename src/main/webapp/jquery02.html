@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        // $("#result").load("jspPage01.jsp");
+        // $("#result").load("jspPage01.jsp", function () {
+        //   alert("mission completed");
+        // });
+        $("#result").load("jspPage01.jsp", function (data) {
+          alert(`${data}`);
+        });
+      });
+    </script>
+    <title>jquery01</title>
+  </head>
+  <body>
+    <div id="result"></div>
+  </body>
+</html>

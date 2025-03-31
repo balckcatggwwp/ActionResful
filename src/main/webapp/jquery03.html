@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        $.getJSON("json/house.json", function (data) {
+          var resultText = "";
+          for (var i = 0; i < data.length; i++) {
+            var house = data[i];
+            resultText += house.houseid + " " + house.housename + "<br/>";
+          }
+          $("#result").html(resultText);
+        });
+      });
+    </script>
+    <title>jquery03</title>
+  </head>
+  <body>
+    <div id="result"></div>
+  </body>
+</html>

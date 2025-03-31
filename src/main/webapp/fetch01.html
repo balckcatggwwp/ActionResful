@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      //   fetch("http://localhost:8081/jsoncreator.controller").then(function (
+      //     response
+      //   ) {
+      $(function () {});
+      fetch("json/house.json").then(function (response) {
+        if (response.status != 200) {
+          console.log("response.status:" + response.status);
+          return;
+        }
+        response.json().then(function (data) {
+          console.log(data);
+
+          var resultText = "";
+          for (var i = 0; i < data.length; i++) {
+            var house = data[i];
+            resultText += house.houseid + " " + house.housename + "<br/>";
+            document.getElementById("result").innerHTML = resultText;
+          }
+        });
+      });
+    </script>
+    <title>fetch01</title>
+  </head>
+  <body>
+    <div id="result"></div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        $.get("jspPage01.jsp", function (data) {
+          $("#result").html(data);
+        });
+      });
+    </script>
+    <title>jquery01</title>
+  </head>
+  <body>
+    <div id="result"></div>
+  </body>
+</html>

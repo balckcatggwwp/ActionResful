@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        $("#send").click(function () {
+          $.ajax({
+            url: "jspPage01.jsp",
+            type: "get",
+            success: function (data) {
+              $("#result").html(data);
+            },
+            complete: function () {
+              $("#send").prop("disabled", true).text("Refresh");
+            },
+          });
+        });
+      });
+    </script>
+    <title>jquery04</title>
+  </head>
+  <body>
+    <div id="result">higgggggggggggg</div>
+    <button id="send">send</button>
+  </body>
+</html>
