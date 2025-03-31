@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      window.onload = function () {
+        async function play() {
+          return "play for fun";
+        }
+        play().then(function (msg) {
+          document.getElementById("result").innerHTML = msg;
+        });
+      };
+    </script>
+    <title>asyncNawait01</title>
+  </head>
+  <body>
+    <div id="result"></div>
+  </body>
+</html>
