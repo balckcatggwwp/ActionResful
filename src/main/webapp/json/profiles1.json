@@ -1,0 +1,17 @@
+[
+	{
+		"name": "mary",
+		"age": "18",
+		"address": "taipei"
+	},
+	{
+		"name": "louis",
+		"age": "25",
+		"address": "taichung"
+	},
+	{
+		"name": "jack",
+		"age": "36",
+		"address": "kaohsiung"
+	}
+]

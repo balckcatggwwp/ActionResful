@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ajax05</title>
+    <script>
+      var xh = new XMLHttpRequest();
+      xh.open("get", "jsoncreator.controller");
+
+      xh.send();
+
+      xh.onload = function () {
+        console.log(xh.responseText);
+        var data = JSON.parse(xh.responseText);
+        var resultText = "";
+        for (var i = 0; i < data.length; i++) {
+          resultText += data[i].houseid + " " + data[i].housename + "<br/>";
+        }
+        console.log(resultText);
+        document.getElementById("result1").innerHTML = resultText;
+      };
+
+      // console.log("finished");
+    </script>
+  </head>
+  <body>
+    ajax05
+    <div id="result1"></div>
+  </body>
+</html>

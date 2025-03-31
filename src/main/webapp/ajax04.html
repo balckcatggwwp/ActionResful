@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ajax04</title>
+    <script>
+      var xh = new XMLHttpRequest();
+      xh.open("get", "xml/game.xml");
+
+      xh.send();
+
+      xh.onload = function () {
+        console.log("xh.responseXML:" + xh.responseXML);
+        console.log(xh.responseXML);
+
+        var result = xh.responseXML.documentElement;
+        console.log(result);
+        var tags = result.children; //game subtags arry
+        var tagsLen = tags.length; //get subtags array length
+
+        console.log(tags);
+        console.log("tagsLen:" + tagsLen);
+        // console.log(tags[0]);
+        // console.log(tags[1]);
+
+        // var sunTags0 = tags[0].children; //reol0 subtags arrat
+        // var sunTags1 = tags[1].children; //reol1 subtags arrat
+
+        // console.log(sunTags0);
+        // console.log(sunTags1);
+
+        // console.log(sunTags0.length);
+        // console.log(sunTags1.length);
+
+        // console.log(sunTags0[0].textContent);
+        // console.log(sunTags0[1].textContent);
+        // console.log(sunTags0[2].textContent);
+        // console.log(sunTags1[0].textContent);
+        // console.log(sunTags1[1].textContent);
+        // console.log(sunTags1[2].textContent);
+        console.log("------------------------------------------");
+        var textResult = "";
+        for (var i = 0; i < tags.length; i++) {
+          var sunTags0 = tags[i].children;
+
+          for (var j = 0; j < sunTags0.length; j++) {
+            console.log(sunTags0[j].textContent);
+            var nodeText = sunTags0[j].textContent;
+            textResult += nodeText + " ";
+          }
+          textResult += "<br/>";
+        }
+        console.log("textResult:" + textResult);
+        document.getElementById("result1").innerHTML = textResult;
+      };
+
+      // console.log("finished");
+    </script>
+  </head>
+  <body>
+    ajax04
+    <div id="result1"></div>
+  </body>
+</html>

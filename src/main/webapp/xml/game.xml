@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game>
+	<role>
+		<name>DarkAngel</name>
+		<skill>sword</skill>
+		<level>50</level>
+	</role>
+	<role>
+		<name>Poseidon</name>
+		<skill>magic</skill>
+		<level>100</level>
+	</role>
+</game>

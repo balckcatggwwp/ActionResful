@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      function satHello(name) {
+        alert("Hello," + name);
+      }
+      function processCallBackAction(callbackName) {
+        var yourName = prompt("Please input you name:");
+        callbackName(yourName);
+      }
+      processCallBackAction(satHello);
+    </script>
+    <title>Insert title here</title>
+  </head>
+  <body>
+    CallBack
+  </body>
+</html>

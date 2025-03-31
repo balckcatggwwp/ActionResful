@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <script>
+      window.onload = function () {
+        var form = document.getElementById("form1");
+        var send = document.getElementById("send");
+        send.addEventListener("click", function (e) {
+          e.preventDefault();
+          var formData = new FormData(form);
+          var userName = formData.get("userName");
+          console.log("userName:" + userName);
+          var resultArray = formData.getAll("result1");
+          console.log(resultArray);
+
+          var xh = new XMLHttpRequest();
+          xh.open("post", "profiles.controller3");
+          xh.send(formData);
+          xh.onload = function () {
+            console.log(" xh.status:" + xh.status);
+            console.log(" xh.responseText:" + xh.responseText);
+          };
+          xh.onloadend = function () {
+            console.log("finished");
+          };
+        });
+      };
+    </script>
+
+    <title>ajax06</title>
+  </head>
+  <body>
+    <h2>Information</h2>
+    <form id="form1">
+      <p>
+        Name:
+        <input
+          type="text"
+          name="userName"
+          placeholder="Plese input your name"
+        /><br />
+        information: <br />
+        info: <input type="text" name="result1" /><br />
+        info: <input type="text" name="result1" /><br />
+      </p>
+      <button type="submit" id="send">sead</button>
+    </form>
+  </body>
+</html>
