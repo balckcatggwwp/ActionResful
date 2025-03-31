@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      window.onload = function () {
+        async function play() {
+          var promise = new Promise(function (resolve, reject) {
+            setTimeout(() => {
+              resolve("play for fun");
+            }, 3000);
+            // resolve("play for fun");
+          });
+          document.getElementById("result").innerHTML = await promise;
+        }
+        play();
+      };
+    </script>
+    <title>asyncNawait02</title>
+  </head>
+  <body>
+    <div id="result"></div>
+  </body>
+</html>
