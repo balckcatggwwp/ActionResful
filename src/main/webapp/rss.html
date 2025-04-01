@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        $("#receive").click(function () {
+          $.ajax({
+            type: "get",
+            url: "ressreader.controller",
+            dataType: "xml",
+            success: function (data) {
+              console.log(data);
+              $("#div1").empty("");
+              var xTitle, xLink;
+              $("item", data).each(function (e) {
+                xTitle = $("title", this).text();
+                xLink = $("link", this).text();
+
+                $("<a/>")
+                  .attr("href", xLink)
+                  .attr("target", "_blank")
+                  .text(xTitle)
+                  .appendTo("#div1");
+                $("<br/>").appendTo("#div1");
+              });
+            },
+          });
+        });
+      });
+    </script>
+    <title>jquery04</title>
+  </head>
+  <body>
+    <button id="receive">receive</button>
+    <div id="div1"></div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        $("#send").click(function () {
+          var userName = $("#userAccount").val();
+          if ($.trim(userName) == "") {
+            alert("userName is empty");
+            return;
+          }
+          var params = { "username": '' + userName };
+          console.log(JSON.stringify(params));
+          $.ajax({
+            url: "accountcheck.controller",
+            type: "post",
+            contentType: "application/json",
+            data: JSON.stringify(params),
+            success: function (data) {
+              console.log(data);
+            },
+          });
+        });
+      });
+    </script>
+    <title>usercheck</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>Account: <input type="text" name="account" id="userAccount" /></td>
+        <td id="result"></td>
+      </tr>
+    </table>
+    <button id="send">send</button>
+  </body>
+</html>

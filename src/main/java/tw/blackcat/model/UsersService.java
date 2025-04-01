@@ -9,7 +9,7 @@ public class UsersService {
  private UsersRepositor usersRepositor;
  
  public boolean checklogin(Users users) {
-	  Users resultBean= usersRepositor.findByUserName(users.getUsername());
+	  Users resultBean= usersRepositor.findByUsername(users.getUsername());
 	  if(resultBean!=null) {
 		  return true;
 	  }
