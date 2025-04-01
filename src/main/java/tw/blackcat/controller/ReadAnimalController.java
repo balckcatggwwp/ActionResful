@@ -28,11 +28,7 @@ public class ReadAnimalController {
 	public List<Animal> processReadAnimalAction(@RequestParam("keyword") String animalName){
 		return searchResult(animalName);
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> test1
-	
 	private List<Animal> searchResult(String animalName) {
         ArrayList<Animal> result = new ArrayList<Animal>();
         
