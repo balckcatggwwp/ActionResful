@@ -29,6 +29,7 @@ public class ReadAnimalController {
 		return searchResult(animalName);
 	}
 
+	
 	private List<Animal> searchResult(String animalName) {
         ArrayList<Animal> result = new ArrayList<Animal>();
         
